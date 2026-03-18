@@ -1,0 +1,43 @@
+function App() {
+
+  let userName = "Abhijeet Kumar"
+  let userAge = 26
+  function changeNameHandler() {
+    userName = "Somjeet Kumar"
+    console.log("code excute hoha jab apna btn click hoga")
+    console.log("change userName is ", userName)
+
+  }
+
+
+  function changeAge(data) {
+    userAge = data
+    console.log(userAge)
+
+  }
+
+
+  // state -> current data of a component
+  // state less-> user ke event karne ke bad bhi agar variable kee value change ho jati hai but ui me chnage value   so nhi hoti hai
+  // state Active-> user ke event karne ke bad  agar variable kee value change ho jati hai or me  ui me chnage value  dekh pata hu 
+
+
+  console.log("My userName and age  are ", userName, userAge)
+  return (
+
+    <div>
+      <p> User Name =<b> {userName}</b></p>
+      {/* <button onClick={changeNameHandler}>Chnage Name</button> */}
+      <button onClick={() => {
+        changeNameHandler()
+      }}>Chnage Name</button>
+
+      <p> User Age=<b> {userAge}</b></p>
+      <button onClick={() => {
+        changeAge(20)
+      }}>Chnage Age</button>
+    </div>
+  )
+}
+
+export default App

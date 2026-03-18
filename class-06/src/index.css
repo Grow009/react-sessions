@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 300px;
+  text-align: left;
+}
+
+.name {
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.card p {
+  margin: 8px 0;
+  color: #555;
+}
+
+.card strong {
+  color: #000;
+}
