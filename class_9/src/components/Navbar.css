@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f7fa;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+
+  background: #1f1f1f;
+  color: white;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Logo */
+.logo a{
+  font-size: 26px;
+  font-weight: bold;
+  color: #f4b400;
+  text-decoration: none;
+}
+
+/* Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+/* Link style */
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 17px;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Underline hover effect */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -6px;
+  background-color: #f4b400;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #f4b400;
+}
+
+ul li .active{
+  color: red;
+}
