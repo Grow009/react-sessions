@@ -1,4 +1,3 @@
-
 import Navbar from "./components/Navbar.jsx"
 import Footer from './components/Footer'
 import Home from "./pages/Home.jsx"
@@ -11,13 +10,13 @@ import Contact from "./pages/Contact.jsx"
 import { useEffect, useState } from "react"
 function App() {
   const [data, setData] = useState([]);
-
+  const [loader, setLoader] = useState(true);
   const [item, setItem] = useState()
-
+  const [showbtn, setShowBtn] = useState(true)
   function getItemFromCard(singleData) {
     setItem(singleData)
   }
-  const [loader, setLoader] = useState(true);
+
   async function ApiForCard(url) {
     try {
       const res = await fetch(url);
@@ -40,10 +39,16 @@ function App() {
     <div style={{ width: "100%" }}>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home data={data} loader={loader} getItemFromCard={getItemFromCard} />} />
+        <Route path="/" element={
+          <Home data={data}
+            showbtn={showbtn}
+            setShowBtn={setShowBtn}
+            loader1={loader}
+            getItemFromCard={getItemFromCard} />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/card-info/:id/:itemname" element={<SingleCardAllInfo product={item} />} />
+        <Route path="/card-info/:id/:itemname"
+          element={<SingleCardAllInfo product={item} />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<h1>Page Not Found</h1>} />

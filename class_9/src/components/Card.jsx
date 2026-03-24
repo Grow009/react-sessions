@@ -1,11 +1,9 @@
-// import { useState } from "react"
-import { use } from "react"
 import "./Card.css"
 import { useNavigate } from "react-router-dom"
 
-function Card({ item,getItemFromCard }) {
+function Card({ item, getItemFromCard, showbtn, setShowBtn }) {
 
-  // const [showReadmore, setShowReadMore] = useState(true)
+
   const navigate = useNavigate()
   return (
     <>
@@ -15,9 +13,26 @@ function Card({ item,getItemFromCard }) {
         <div className="card-content">
           <div className="card-title">{`${item?.title.substr(0, 21)}...`}</div>
           <div className="card-description">
-            {`${item?.description.substr(0, 81)}...`}
 
 
+            {
+              showbtn ?
+                (<span>{`${item?.description.substr(0, 81)}...`}'</span>)
+                :
+                (<span>${item?.description}</span>)
+
+            }
+
+
+            <span style={{ color: "blue" }}
+
+              onClick={() => {
+                setShowBtn(!showbtn)
+              }}
+            >
+
+              {showbtn ? "read more " : "read less"}
+            </span>
           </div>
           <div className="card-price">₹{item?.price}</div>
           < button className="card-button" onClick={() => {
@@ -25,7 +40,7 @@ function Card({ item,getItemFromCard }) {
             getItemFromCard(item)
           }}>View All Info</button>
         </div>
-      </div>
+      </div >
     </>
   )
 }
